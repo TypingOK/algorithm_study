@@ -61,3 +61,14 @@ BFS는 너비 우선 탐색으로 부른다. 동작 과정은 다음과 같다.
   e. 위 과정에서 c와 d번을 반복한다.
 - 힙을 사용하여 구현하는것이 제일 좋다.
 2. 플로이드 워셜 알고리즘 : '모든 지점에서 다른 모든 지점까지의 최단 경로를 구해야 하는 경우'에 사용할 수 있는 최단 경로 알고리즘이다.
+
+
+#2차원 배열을 90도 회전하는 함수
+def rotate_a_matrix_90_degree(a):
+    n=len(a)
+    m=len(a[0])
+    result = [[0] * n for _ in range(m)]
+    for i in range(n):
+        for j in range(m):
+            result[j][n-i-1] = a[i][j]
+    return result
