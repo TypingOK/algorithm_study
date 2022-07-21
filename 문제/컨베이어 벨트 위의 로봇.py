@@ -31,10 +31,7 @@ while(True):
     if(not check[0] and belt[0] > 0):
         check[0] = True
         belt[0] -= 1
-    count = 0
-    for i in range(len(belt)):
-        if(belt[i] == 0):
-            count += 1
+    count = belt.count(0)
     if(count >= K):
         break
 print(index)
