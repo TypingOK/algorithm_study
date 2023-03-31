@@ -8,7 +8,7 @@ N, K = map(int, input().split())
 def bfs(N, K):
     q = deque()
     q.append(N)
-    visited = [0] * 100001
+    visited = [False] * 100001
     path = [0] * 100001
 
     count = 0
@@ -29,10 +29,10 @@ def bfs(N, K):
                 return
 
             for i in (x-1, x+1, 2*x):
-                if 0 <= i < 100001 and visited[i] == 0:
+                if 0 <= i < 100001 and not visited[i]:
                     q.append(i)
 
-                    visited[i] = visited[x] + 1
+                    visited[i] = True
                     path[i] = x
 
 
