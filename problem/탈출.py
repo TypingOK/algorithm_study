@@ -11,15 +11,14 @@ def bfs(N, T, G):
     q.append((N, 0))
     visited = [False] * 100000
     visited[N] = True
-    minAnswer = T+1
+
     while q:
         x, count = q.popleft()
 
-        if x == G:
-            minAnswer = min(minAnswer, count)
-            continue
         if count > T:
-            break
+            return -1
+        if x == G:
+            return count
         temp = x+1
         if temp < 100000 and not visited[temp]:
             q.append((temp, count+1))
@@ -31,11 +30,11 @@ def bfs(N, T, G):
             if not visited[temp]:
                 q.append((temp, count+1))
                 visited[temp] = True
-    return minAnswer
+    return -1
 
 
 answer = bfs(N, T, G)
-if answer == T+1:
+if answer == -1:
     print("ANG")
 else:
     print(answer)
