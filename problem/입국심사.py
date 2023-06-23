@@ -10,7 +10,7 @@ time_min = 1
 time_max = check[-1] * M
 answer = 1e9
 
-while(time_min <= time_max):
+while (time_min <= time_max):
     mid = (time_min + time_max) // 2
     count = sum(mid//time for time in check)
 

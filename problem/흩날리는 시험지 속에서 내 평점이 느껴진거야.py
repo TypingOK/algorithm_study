@@ -5,7 +5,7 @@ N, K = map(int, input().split())
 x = list(map(int, input().split()))
 
 left = min(x)
-right = sum(x)
+right = sum(x)+1
 answer = 98765432119999
 
 while (left < right):
@@ -19,7 +19,7 @@ while (left < right):
             grade = 0
     if count >= K:
         answer = mid
-        left =  mid + 1
+        left = mid + 1
     elif count < K:
-        right =  mid - 1
+        right = mid - 1
 print(answer)
