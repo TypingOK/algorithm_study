@@ -4,7 +4,7 @@ input = sys.stdin.readline
 T = int(input())
 
 
-def dfs(visited):
+def comb(visited):
     first = -1
     count = 0
 
@@ -38,4 +38,4 @@ for _ in range(T):
         friends[A][B] = 1
         friends[B][A] = 1
 
-    print(dfs(visited))
+    print(comb(visited))
