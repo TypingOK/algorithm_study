@@ -34,12 +34,6 @@ def second_bfs(startX, startY):
 
     while (q):
         x, y, count = q.popleft()
-        # print(x, y, count)
-        # for i in range(N):
-        #     for j in range(N):
-        #         print(visit[i][j], end=" ")
-        #     print()
-        # print()
         if count > answer:
             continue
         for i in range(4):
@@ -63,21 +57,11 @@ for i in range(N):
         if not visited[i][j] and grid[i][j] == 1:
             first_bfs(count, i, j)
             count += 1
-            # print(count)
-# for i in range(N):
-#     for j in range(N):
-#         print(visited[i][j], end=" ")
-#     print()
 
 for i in range(N):
     for j in range(N):
         if grid[i][j] != 0:
             result = second_bfs(i, j)
             answer = min(result, answer)
-
-# for i in range(N):
-#     for j in range(N):
-#         print(grid[i][j], end=" ")
-#     print()
 
 print(answer)
