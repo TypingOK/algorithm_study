@@ -27,7 +27,7 @@ def dfs(dp,graph, x, y, N, M):
         if 0 <= nx < N and 0 <= ny < M and graph[x][y] > graph[nx][ny]:
             count += dfs(dp,graph, nx, ny, N, M)
     dp[x][y] = count
+    print(dp)
     return dp[x][y]
-
 print(dfs(dp, graph, 0, 0, N, M))
 
