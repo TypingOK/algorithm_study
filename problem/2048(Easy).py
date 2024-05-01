@@ -2,8 +2,6 @@ import sys
 from copy import deepcopy
 input = sys.stdin.readline
 
-# f = open("새파일.txt", 'w')
-
 dx = [1, 0, -1, 0]
 dy = [0, 1, 0, -1]
 
@@ -13,7 +11,6 @@ max_block = -sys.maxsize
 
 
 def move(dir, g, comb, x, y):
-    # f.write(str(x)+" "+str(y)+"\n")
     if dir == 0:
         for i in range(N-1, x, -1):
             if g[i][y] == 0:
@@ -69,12 +66,6 @@ def re(depth: int, g: list):
             for j in range(N):
                 max_block = max(g[i][j], max_block)
         return
-    # f.write(str(depth) + " ----------------------------------------- \n")
-    # for i in range(N):
-    #     for j in range(N):
-    #         f.write(str(g[i][j])+" ")
-    #     f.write("\n")
-    # f.write("\n")
     comb = [[False for _ in range(N)] for _ in range(N)]
 
     # 위에서 아래로
@@ -116,6 +107,3 @@ def re(depth: int, g: list):
 re(0, graph)
 
 print(max_block)
-
-
-# f.close()
