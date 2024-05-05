@@ -63,12 +63,6 @@ while True:
                 exit_flag = True
                 bfs(i, j, visited, out_air)
 
-    # print(count, "--------------------------------------------")
-    # for i in range(N):
-    #     for j in range(M):
-    #         print(graph[i][j], end=" ")
-    #     print()
-    # print()
     if not exit_flag:
         break
     count += 1
